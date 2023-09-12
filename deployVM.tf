@@ -6,8 +6,6 @@ variable "subscription_id" {
 }
 variable "tenant_id" {
 }
-variable "sa_key {
-}
 
 
 terraform {
@@ -21,7 +19,7 @@ terraform {
       resource_group_name  = "RG1"
       storage_account_name = "saels200"
       container_name       = "tfstate"
-      key                  = var.sa_key
+      key                  = "terraform.tfstate"
   }
 
 }
