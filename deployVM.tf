@@ -33,7 +33,7 @@ provider "azurerm" {
 }
 
 variable "RG" {
-    default = "RG4"
+    default = "RG8"
 }
 
 variable "VM" {
