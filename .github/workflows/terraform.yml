@@ -11,6 +11,7 @@ env:
   TF_VAR_client_secret: ${{secrets.AZURE_CLIENT_SECRET}}
   TF_VAR_tenant_id: ${{secrets.AZURE_TENANT_ID}}
   TF_VAR_admin_pwd: ${{secrets.ADMIN_PWD}}
+  TF_VAR_sa_key: ${{secrets.SA_KEY}}
 
 jobs:
   terraform:
