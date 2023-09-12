@@ -9,19 +9,18 @@ variable "tenant_id" {
 
 
 terraform {
+  backend "remote" {
+    organization   = "U2U"
+    workspaces {
+     name = "WSEls"
+  }
+ }
   required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~>3.0"
-    }
+   azurerm = {
+    source = "hashicorp/azurerm"
+    version = "=2.46.0"
+   }
   }
-  backend "azurerm" {
-      resource_group_name  = "RG1"
-      storage_account_name = "saels200"
-      container_name       = "tfstate"
-      key                  = "terraform.tfstate"
-  }
-
 }
 
 
@@ -34,7 +33,7 @@ provider "azurerm" {
 }
 
 variable "RG" {
-    default = "RG8"
+    default = "RG4"
 }
 
 variable "VM" {
@@ -161,4 +160,3 @@ resource "azurerm_virtual_machine" "VM1" {
       provision_vm_agent = true
     }
 }
-
